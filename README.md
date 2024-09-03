@@ -16,7 +16,7 @@ Add the dependency to your app's `build.gradle` file.
 
 ```groovy
 dependencies {
-    compile 'net.authorize:accept-sdk-android:2.0.0'
+    implementation 'net.authorize:accept-sdk-android:2.0.0'
 }
 ```
 

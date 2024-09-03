@@ -30,7 +30,7 @@ android {
         targetSdkVersion 33
         versionCode 4
         versionName "2.0.0"
-        buildConfigField "String", "SDK_VERSION", versionName
+        buildConfigField "String", "SDK_VERSION", '"2.0.0"'
     }
     buildFeatures {
         buildConfig = true
