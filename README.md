@@ -12,15 +12,11 @@ This SDK allows mobile developers to accept payments on a customer's mobile devi
 1. [Sample Application](#sample-application)
 
 ## Installation (One Step)
-Add the dependency from jCenter to your app's (not project's) `build.gradle` file.
+Add the dependency to your app's `build.gradle` file.
 
 ```groovy
-repositories {
-    jcenter()
-}
-
 dependencies {
-    compile 'net.authorize:accept-sdk-android:1.0.2'
+    compile 'net.authorize:accept-sdk-android:2.0.0'
 }
 ```
 
