@@ -2,84 +2,83 @@ package net.authorize.acceptsdk.datamodel.transaction.response;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 /**
  * Response Object of Encrypt Transaction.
- *
+ * <p>
  * Created by Kiran Bollepalli on 07,July,2016.
  * kbollepa@visa.com
  */
 public class EncryptTransactionResponse extends TransactionResponse {
 
-  private String mDataDescriptor;
-  private String mDataValue;
+    private String mDataDescriptor;
+    private String mDataValue;
 
-  public EncryptTransactionResponse() {
-    super();
-  }
-
-
-  /**
-   * Returns Data descriptor .Used as "dataDescriptor" to perform payment transaction.
-   *
-   * @return String
-   */
-  public String getDataDescriptor() {
-    return mDataDescriptor;
-  }
-
-  public void setDataDescriptor(String mDataDescriptor) {
-    this.mDataDescriptor = mDataDescriptor;
-  }
-
-  /**
-   * Returns Encrypted Payment Token.Used as "dataValue" to perform payment transaction.
-   *
-   * @return String Encrypted Payment Token
-   */
-  public String getDataValue() {
-    return mDataValue;
-  }
-
-  public void setDataValue(String mDataValue) {
-    this.mDataValue = mDataValue;
-  }
+    public EncryptTransactionResponse() {
+        super();
+    }
 
 
-  // ---------- Code for Parcelable interface ----------
+    /**
+     * Returns Data descriptor .Used as "dataDescriptor" to perform payment transaction.
+     *
+     * @return String
+     */
+    public String getDataDescriptor() {
+        return mDataDescriptor;
+    }
 
-  public EncryptTransactionResponse(Parcel in) {
-    super(in);
-    readFromParcel(in);
-  }
+    public void setDataDescriptor(String mDataDescriptor) {
+        this.mDataDescriptor = mDataDescriptor;
+    }
+
+    /**
+     * Returns Encrypted Payment Token.Used as "dataValue" to perform payment transaction.
+     *
+     * @return String Encrypted Payment Token
+     */
+    public String getDataValue() {
+        return mDataValue;
+    }
+
+    public void setDataValue(String mDataValue) {
+        this.mDataValue = mDataValue;
+    }
 
 
-  @Override public int describeContents() {
-    return 0;
-  }
+    // ---------- Code for Parcelable interface ----------
+
+    public EncryptTransactionResponse(Parcel in) {
+        super(in);
+        readFromParcel(in);
+    }
 
 
+    @Override public int describeContents() {
+        return 0;
+    }
 
-  public void readFromParcel(Parcel in) {
-    mDataDescriptor = in.readString();
-    mDataValue = in.readString();
-  }
+    public void readFromParcel(Parcel in) {
+        mDataDescriptor = in.readString();
+        mDataValue = in.readString();
+    }
 
-  @Override public void writeToParcel(Parcel dest, int flags) {
-    super.writeToParcel(dest, flags);
-    dest.writeString(mDataDescriptor);
-    dest.writeString(mDataValue);
-  }
+    @Override public void writeToParcel(@NonNull Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(mDataDescriptor);
+        dest.writeString(mDataValue);
+    }
 
-  public static final Parcelable.Creator<EncryptTransactionResponse> CREATOR =
-      new Parcelable.Creator<EncryptTransactionResponse>() {
+    public static final Parcelable.Creator<EncryptTransactionResponse> CREATOR =
+            new Parcelable.Creator<EncryptTransactionResponse>() {
 
-        @Override public EncryptTransactionResponse createFromParcel(Parcel in) {
-          return new EncryptTransactionResponse(in);
-        }
+                @Override public EncryptTransactionResponse createFromParcel(Parcel in) {
+                    return new EncryptTransactionResponse(in);
+                }
 
-        @Override public EncryptTransactionResponse[] newArray(int size) {
-          return new EncryptTransactionResponse[size];
-        }
-      };
+                @Override public EncryptTransactionResponse[] newArray(int size) {
+                    return new EncryptTransactionResponse[size];
+                }
+            };
 }

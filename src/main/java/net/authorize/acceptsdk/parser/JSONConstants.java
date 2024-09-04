@@ -3,8 +3,8 @@ package net.authorize.acceptsdk.parser;
 import net.authorize.acceptsdk.BuildConfig;
 
 /**
- * Describes all Json strings, which are used in API's.
- *
+ * Describes all Json strings, which are used in APIs.
+ * <p>
  * Created by Kiran Bollepalli on 12,July,2016.
  * kbollepa@visa.com
  */
@@ -50,54 +50,54 @@ public final class JSONConstants {
 
     */
 
-  /* Request related JSON Strings */
-  public static final String CONTAINER_REQUEST = "securePaymentContainerRequest";
-  public static final String MERCHANT_AUTHENTICATION = "merchantAuthentication";
-  public static final String DATA = "data";
-  public static final String TYPE = "type";
-  public static final String TYPE_VALUE_TOKEN = "TOKEN";
-  public static final String CLIENT_ID = "clientId";
-  public static final String CLIENT_ID_VALUE = "accept-sdk-android" + BuildConfig.SDK_VERSION;
+    /* Request related JSON Strings */
+    public static final String CONTAINER_REQUEST = "securePaymentContainerRequest";
+    public static final String MERCHANT_AUTHENTICATION = "merchantAuthentication";
+    public static final String DATA = "data";
+    public static final String TYPE = "type";
+    public static final String TYPE_VALUE_TOKEN = "TOKEN";
+    public static final String CLIENT_ID = "clientId";
+    public static final String CLIENT_ID_VALUE = "accept-sdk-android" + BuildConfig.SDK_VERSION;
 
 
-  public static final String ID = "id";
-  public static final String TOKEN = "token";
+    public static final String ID = "id";
+    public static final String TOKEN = "token";
 
-  public interface Authentication {
-    String NAME = "name";
-    String CLIENT_KEY = "clientKey";
-    String FINGER_PRINT = "fingerPrint";
-  }
+    public interface Authentication {
+        String NAME = "name";
+        String CLIENT_KEY = "clientKey";
+        String FINGER_PRINT = "fingerPrint";
+    }
 
-  public interface Card {
-    String CARD_NUMBER = "cardNumber";
-    String EXPIRATION_DATE = "expirationDate";
-    String CARD_CODE = "cardCode";
-    String ZIP = "zip";
-    String CARD_HOLDER_NAME = "fullName";
-  }
+    public interface Card {
+        String CARD_NUMBER = "cardNumber";
+        String EXPIRATION_DATE = "expirationDate";
+        String CARD_CODE = "cardCode";
+        String ZIP = "zip";
+        String CARD_HOLDER_NAME = "fullName";
+    }
 
-  public interface FingerPrint {
-    String HASH_VALUE = "hashValue";
-    String SEQUENCE = "sequence";
-    String TIME_STAMP = "timestamp";
-    String CURRENCY_CODE = "currencyCode";
-    String AMOUNT = "amount";
-  }
+    public interface FingerPrint {
+        String HASH_VALUE = "hashValue";
+        String SEQUENCE = "sequence";
+        String TIME_STAMP = "timestamp";
+        String CURRENCY_CODE = "currencyCode";
+        String AMOUNT = "amount";
+    }
 
-  /* Response related JSON Strings */
-  public static final String RESULT_CODE = "resultCode";
+    /* Response related JSON Strings */
+    public static final String RESULT_CODE = "resultCode";
 
-  public interface ResultCode {
-    String OK = "Ok";
-    String ERROR = "Error";
-  }
+    public interface ResultCode {
+        String OK = "Ok";
+        String ERROR = "Error";
+    }
 
-  public static final String OPAQUE_DATA = "opaqueData";
-  public static final String DATA_DESCRIPTOR = "dataDescriptor";
-  public static final String DATA_VALUE = "dataValue";
-  public static final String MESSAGES_LIST = "messages";
-  public static final String MESSAGE = "message";
-  public static final String MESSAGE_CODE = "code";
-  public static final String MESSAGE_TEXT = "text";
+    public static final String OPAQUE_DATA = "opaqueData";
+    public static final String DATA_DESCRIPTOR = "dataDescriptor";
+    public static final String DATA_VALUE = "dataValue";
+    public static final String MESSAGES_LIST = "messages";
+    public static final String MESSAGE = "message";
+    public static final String MESSAGE_CODE = "code";
+    public static final String MESSAGE_TEXT = "text";
 }

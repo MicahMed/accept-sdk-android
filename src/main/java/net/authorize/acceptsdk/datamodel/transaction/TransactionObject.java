@@ -11,87 +11,82 @@ import net.authorize.acceptsdk.datamodel.merchant.AbstractMerchantAuthentication
  */
 public abstract class TransactionObject implements Serializable {
 
-  private static final long serialVersionUID = 2L;
+    private static final long serialVersionUID = 2L;
 
-  AbstractMerchantAuthentication mMerchantAuthentication;
-  CardData mCardData;
-  TransactionType mTransactionType;
-  String mGuid;
+    AbstractMerchantAuthentication mMerchantAuthentication;
+    CardData mCardData;
+    TransactionType mTransactionType;
+    String mGuid;
 
-  public TransactionObject() {
-    //FIXME : Need to revisit this code
-    mGuid = UUID.randomUUID().toString();
-  }
+    public TransactionObject() {
+        //FIXME : Need to revisit this code
+        mGuid = UUID.randomUUID().toString();
+    }
 
-  public AbstractMerchantAuthentication getMerchantAuthentication() {
-    return mMerchantAuthentication;
-  }
+    public AbstractMerchantAuthentication getMerchantAuthentication() {
+        return mMerchantAuthentication;
+    }
 
-  public void setGuid(String guid) {
-    mGuid = guid;
-  }
+    public void setGuid(String guid) {
+        mGuid = guid;
+    }
 
-  public String getGuid() {
-    return mGuid;
-  }
+    public String getGuid() {
+        return mGuid;
+    }
 
-  public void setMerchantAuthentication(AbstractMerchantAuthentication mMerchantAuthentication) {
+    public void setMerchantAuthentication(AbstractMerchantAuthentication mMerchantAuthentication) {
 
-    this.mMerchantAuthentication = mMerchantAuthentication;
-  }
+        this.mMerchantAuthentication = mMerchantAuthentication;
+    }
 
-  public CardData getCardData() {
-    return mCardData;
-  }
+    public CardData getCardData() {
+        return mCardData;
+    }
 
-  public void setCardData(CardData mCardData) {
-    this.mCardData = mCardData;
-  }
+    public void setCardData(CardData mCardData) {
+        this.mCardData = mCardData;
+    }
 
-  public TransactionType getTransactionType() {
-    return mTransactionType;
-  }
+    public TransactionType getTransactionType() {
+        return mTransactionType;
+    }
 
-  public void setTransactionType(TransactionType mTransactionType) {
-    this.mTransactionType = mTransactionType;
-  }
+    public void setTransactionType(TransactionType mTransactionType) {
+        this.mTransactionType = mTransactionType;
+    }
 
-  public  abstract boolean validateTransactionObject(ValidationCallback callback);
+    public  abstract boolean validateTransactionObject(ValidationCallback callback);
 
-  /**
-   * A factory method for creating proper transaction object.
-   *
-   * @param type transaction type
-   * @return one of transaction objects
-   */
-  public static TransactionObject.Builder createTransactionObject(TransactionType type)
-      throws IllegalArgumentException {
+    /**
+     * A factory method for creating proper transaction object.
+     *
+     * @param type transaction type
+     * @return one of transaction objects
+     */
+    public static TransactionObject.Builder createTransactionObject(TransactionType type)
+            throws IllegalArgumentException {
 
-    if (type == null) throw new IllegalArgumentException("TransactionType must not be null");
-    switch (type) {
-      case SDK_TRANSACTION_ENCRYPTION:
-        return new EncryptTransactionObject.Builder();
-      default:
+        if (type == null) throw new IllegalArgumentException("TransactionType must not be null");
         return new EncryptTransactionObject.Builder();
     }
-  }
 
-  public static abstract class Builder {
-    CardData cardData;
-    AbstractMerchantAuthentication merchantAuthentication;
-    TransactionType transactionType;
+    public static abstract class Builder {
+        CardData cardData;
+        AbstractMerchantAuthentication merchantAuthentication;
+        TransactionType transactionType;
 
-    public TransactionObject.Builder cardData(CardData cardData) {
-      this.cardData = cardData;
-      return this;
+        public TransactionObject.Builder cardData(CardData cardData) {
+            this.cardData = cardData;
+            return this;
+        }
+
+        public TransactionObject.Builder merchantAuthentication(
+                AbstractMerchantAuthentication merchantAuthentication) {
+            this.merchantAuthentication = merchantAuthentication;
+            return this;
+        }
+
+        public abstract EncryptTransactionObject build();
     }
-
-    public TransactionObject.Builder merchantAuthentication(
-        AbstractMerchantAuthentication merchantAuthentication) {
-      this.merchantAuthentication = merchantAuthentication;
-      return this;
-    }
-
-    public abstract EncryptTransactionObject build();
-  }
 }

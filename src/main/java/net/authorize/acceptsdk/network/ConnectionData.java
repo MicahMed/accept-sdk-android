@@ -2,7 +2,7 @@ package net.authorize.acceptsdk.network;
 
 /**
  * Class contains constants and methods related to Network connection.
- *
+ * <p>
  * Created by Kiran Bollepalli on 08,July,2016.
  * kbollepa@visa.com
  */

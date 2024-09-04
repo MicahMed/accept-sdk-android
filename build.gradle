@@ -19,15 +19,15 @@ ext {
 
 
 android {
-    namespace 'net.authorize'
+    namespace 'net.authorize.acceptsdk'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
     defaultConfig {
-        compileSdk 33
+        compileSdk 35
         minSdkVersion 26
-        targetSdkVersion 33
+        targetSdkVersion 35
         versionCode 4
         versionName "2.0.0"
         buildConfigField "String", "SDK_VERSION", '"2.0.0"'

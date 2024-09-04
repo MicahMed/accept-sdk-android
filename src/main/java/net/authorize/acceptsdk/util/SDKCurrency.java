@@ -2,7 +2,7 @@ package net.authorize.acceptsdk.util;
 
 /**
  * Enumeration describing available currencies:
- *
+ * <p>
  * Available currencies:
  * <ul>
  * <li>CAD ( $ )</li>
@@ -13,13 +13,13 @@ package net.authorize.acceptsdk.util;
  */
 public enum SDKCurrency {
 
-  CAD("\u0024"), EUR("\u20AC"), GBP("\u00A3"), USD("\u0024");
+  CAD("$"), EUR("€"), GBP("£"), USD("$");
 
-  private SDKCurrency(String symbol) {
+  SDKCurrency(String symbol) {
     this.symbol = symbol;
   }
 
-  private String symbol;
+  private final String symbol;
 
   public String symbol() {
     return symbol;

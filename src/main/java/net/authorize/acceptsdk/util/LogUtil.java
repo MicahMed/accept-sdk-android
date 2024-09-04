@@ -5,7 +5,7 @@ import net.authorize.acceptsdk.BuildConfig;
 
 /**
  * Utility class for Logging.
- *
+ * <p>
  * Created by Kiran Bollepalli on 12,July,2016.
  * kbollepa@visa.com
  */
@@ -20,8 +20,6 @@ public final class LogUtil {
     WARN,
     ERROR
   }
-
-  ;
 
   public static void log(LOG_LEVEL level, String message) {
 

@@ -10,55 +10,55 @@ import net.authorize.acceptsdk.datamodel.transaction.response.ErrorTransactionRe
  */
 public class ClientKeyBasedMerchantAuthentication extends AbstractMerchantAuthentication {
 
-  private String mClientKey;
+    private String mClientKey;
 
-  private ClientKeyBasedMerchantAuthentication() {
-  }
-
-  /**
-   * Creates a client key authenticator.
-   *
-   * @param loginId API login id of merchant.
-   * @param clientKey public client key of merchant
-   * @return ClientKeyBasedMerchantAuthentication Object
-   */
-  public static ClientKeyBasedMerchantAuthentication createMerchantAuthentication(String loginId,
-      String clientKey) {
-    ClientKeyBasedMerchantAuthentication authenticator = new ClientKeyBasedMerchantAuthentication();
-
-    if (loginId != null) loginId = loginId.trim();
-    if (clientKey != null) clientKey = clientKey.trim();
-
-    authenticator.mApiLoginID = loginId;
-    authenticator.mClientKey = clientKey;
-    authenticator.merchantAuthenticationType = MerchantAuthenticationType.CLIENT_KEY;
-
-    return authenticator;
-  }
-
-  public String getClientKey() {
-    return mClientKey;
-  }
-
-  /**
-   * Validates Client key based Merchant Authentication.
-   *
-   * @param callback {@link ValidationCallback}
-   * @return boolean true, if it is success. false if validation fails.
-   */
-  @Override public boolean validateMerchantAuthentication(ValidationCallback callback) {
-    if (!ValidationManager.isValidString(mApiLoginID)) {
-      callback.OnValidationFailed(
-          ErrorTransactionResponse.createErrorResponse(SDKErrorCode.E_WC_10));
-      return false;
+    private ClientKeyBasedMerchantAuthentication() {
     }
 
-    if (!ValidationManager.isValidString(mClientKey)) {
-      callback.OnValidationFailed(
-          ErrorTransactionResponse.createErrorResponse(SDKErrorCode.E_WC_18));
-      return false;
+    /**
+     * Creates a client key authenticator.
+     *
+     * @param loginId API login id of merchant.
+     * @param clientKey public client key of merchant
+     * @return ClientKeyBasedMerchantAuthentication Object
+     */
+    public static ClientKeyBasedMerchantAuthentication createMerchantAuthentication(String loginId,
+                                                                                    String clientKey) {
+        ClientKeyBasedMerchantAuthentication authenticator = new ClientKeyBasedMerchantAuthentication();
+
+        if (loginId != null) loginId = loginId.trim();
+        if (clientKey != null) clientKey = clientKey.trim();
+
+        authenticator.mApiLoginID = loginId;
+        authenticator.mClientKey = clientKey;
+        authenticator.merchantAuthenticationType = MerchantAuthenticationType.CLIENT_KEY;
+
+        return authenticator;
     }
 
-    return true;
-  }
+    public String getClientKey() {
+        return mClientKey;
+    }
+
+    /**
+     * Validates Client key based Merchant Authentication.
+     *
+     * @param callback {@link ValidationCallback}
+     * @return boolean true, if it is success. false if validation fails.
+     */
+    @Override public boolean validateMerchantAuthentication(ValidationCallback callback) {
+        if (!ValidationManager.isValidString(mApiLoginID)) {
+            callback.OnValidationFailed(
+                    ErrorTransactionResponse.createErrorResponse(SDKErrorCode.E_WC_10));
+            return false;
+        }
+
+        if (!ValidationManager.isValidString(mClientKey)) {
+            callback.OnValidationFailed(
+                    ErrorTransactionResponse.createErrorResponse(SDKErrorCode.E_WC_18));
+            return false;
+        }
+
+        return true;
+    }
 }

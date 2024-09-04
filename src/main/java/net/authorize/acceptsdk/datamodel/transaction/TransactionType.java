@@ -11,5 +11,5 @@ import java.io.Serializable;
  * @author Kiran bollepalli
  */
 public enum TransactionType implements Serializable {
-  SDK_TRANSACTION_ENCRYPTION
+    SDK_TRANSACTION_ENCRYPTION
 }
