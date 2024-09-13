@@ -7,7 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
+
 /**
  * Created by Kiran Bollepalli on 14,July,2016.
  * kbollepa@visa.com
