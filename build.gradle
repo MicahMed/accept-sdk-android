@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.2'
+        classpath 'com.android.tools.build:gradle:8.6.0'
     }
 }
 
@@ -16,7 +16,6 @@ ext {
     PUBLISH_VERSION = '2.0.0'
     // COMMENT : If publish version changes change "version name" in "defaultconfig" below
 }
-
 
 android {
     namespace 'net.authorize.acceptsdk'
@@ -49,11 +48,6 @@ android {
     lintOptions {
         abortOnError false
     }
-}
-
-repositories {
-    google()
-    mavenCentral()
 }
 
 dependencies {
