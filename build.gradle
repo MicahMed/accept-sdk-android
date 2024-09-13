@@ -8,6 +8,10 @@ buildscript {
     }
 }
 
+plugins {
+    id 'maven-publish'
+}
+
 apply plugin: 'com.android.library'
 
 ext {
@@ -48,6 +52,14 @@ android {
     lintOptions {
         abortOnError false
     }
+    testFixtures {
+        enable = true
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
 }
 
 dependencies {
@@ -56,3 +68,26 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-core:5.13.0'
 }
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'net.authorize'
+            artifactId = 'accept-android-sdk'
+            version = '2.0.0'
+        }
+    }
+    repositories {
+        maven {
+            name = 'AuthorizeNetSdk'
+            url = layout.buildDirectory.dir("repo")
+        }
+    }
+}
+
+//tasks.register('generateRepo', Zip) {
+//    def publishTask = tasks.named('publishReleasePublicationToMyRepository')
+//    from publishTask.map { it.getRepository().getUrl() }
+//    into 'authorizeNetSdk'
+//    archiveFileName.set('authorizeNetSdk.zip')
+//}
