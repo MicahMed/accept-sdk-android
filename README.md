@@ -1,7 +1,7 @@
 
 # Authorize.Net Accept Mobile SDK for Android  
 
-  
+
 This SDK allows mobile developers to accept payments on a customer's mobile device from within their Android applications without having to pass sensitive card data back to their application backend servers.  For more information on including payments in your mobile application see our [In-App Payments Guide](http://developer.authorize.net/api/reference/features/in-app.html)
 
 
@@ -15,6 +15,10 @@ This SDK allows mobile developers to accept payments on a customer's mobile devi
 Add the dependency to your app's `build.gradle` file.
 
 ```groovy
+repositories {
+   jcenter()
+}
+
 dependencies {
     implementation 'net.authorize:accept-sdk-android:2.0.0'
 }

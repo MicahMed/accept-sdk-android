@@ -17,7 +17,6 @@ ext {
     // COMMENT : If publish version changes change "version name" in "defaultconfig" below
 }
 
-
 android {
     namespace 'net.authorize.acceptsdk'
     compileOptions {
@@ -25,9 +24,9 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
     defaultConfig {
-        compileSdk 35
+        compileSdk 33
         minSdkVersion 26
-        targetSdkVersion 35
+        targetSdkVersion 33
         versionCode 4
         versionName "2.0.0"
         buildConfigField "String", "SDK_VERSION", '"2.0.0"'
@@ -49,11 +48,6 @@ android {
     lintOptions {
         abortOnError false
     }
-}
-
-repositories {
-    google()
-    mavenCentral()
 }
 
 dependencies {
