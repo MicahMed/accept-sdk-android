@@ -16,11 +16,11 @@ Add the dependency to your app's `build.gradle` file.
 
 ```groovy
 repositories {
-   jcenter()
+   maven { url "https://jitpack.io" }
 }
 
 dependencies {
-    implementation 'net.authorize:accept-sdk-android:2.0.0'
+    implementation 'com.github.MicahMed:accept-sdk-android:2.0.0'
 }
 ```
 
